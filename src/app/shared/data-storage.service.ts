@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";    
-
 // import { Recipe } from '../recipes/recipe.model'; // removed
 import { RecipeService } from '../recipes/recipe.service';
 
@@ -17,7 +16,6 @@ export class DataStorageService {
         )
         .subscribe(response => {
             console.log(response);
-            
         });
     }
 }
