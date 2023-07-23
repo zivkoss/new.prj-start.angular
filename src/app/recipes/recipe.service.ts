@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs'; // Subject
 
 import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
@@ -63,3 +63,6 @@ export class RecipeService {
     this.recipesChanged.next(this.recipes.slice());
   }
 }
+
+
+// c
