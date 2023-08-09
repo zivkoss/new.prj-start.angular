@@ -14,8 +14,8 @@
           {{ isLoginMode ? 'Login' : 'Sign Up' }}
         </button> 
         |
-        <button class="btn btn-primary" (click)="onSwitchMode" type="submit">
-          {{ isLoginMode ? 'Sign Up' : 'Login' }}
+        <button class="btn btn-primary" (click)="onSwitchMode()" type="submit">
+          Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}
         </button>
       </div>
     </form>
