@@ -23,13 +23,18 @@ export class AuthComponent {
         const password = form.value.password;
         // console.log(form.value);
 
-        this.authService.signup(email, password).subscribe(resData => {
-            console.log(resData);
-        },
-        error => {
-            console.log(error);
-            }
-        );
+        if (this.isLoginMode) {
+            // ...
+        } else {
+            this.authService.signup(email, password).subscribe(resData => {
+                console.log(resData);
+            },
+            error => {
+                console.log(error);
+                }
+            );
+        }
+    
 
         form.reset();
     }
