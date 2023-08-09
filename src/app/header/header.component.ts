@@ -19,4 +19,5 @@ export class HeaderComponent {
 }
 
 
-//
+
+// problem with bug
