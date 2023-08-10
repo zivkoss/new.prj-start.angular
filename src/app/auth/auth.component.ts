@@ -36,17 +36,11 @@ export class AuthComponent {
                 },
                 errorRes => {
                     console.log(errorRes);
-                    switch (errorRes.error.error.message) {
-                        case 'EMAIL_EXISTS':
-                            this.error = 'This email exists already';
-                    }
-                    this.error = 'An error occurred!';
+                
                     this.isLoading = false;
                 }
             );
-        }
-    
-
+        }  
         form.reset();
     }
 }
