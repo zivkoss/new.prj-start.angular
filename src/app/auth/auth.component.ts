@@ -8,6 +8,7 @@ import { AuthService } from './auth.service';
 })
 export class AuthComponent {
     isLoginMode = true;
+    isLoading = false;
 
     constructor(private authService: AuthService) {}
 
@@ -23,6 +24,7 @@ export class AuthComponent {
         const password = form.value.password;
         // console.log(form.value);
 
+        this.isLoading = true;
         if (this.isLoginMode) {
             // ...
         } else {
