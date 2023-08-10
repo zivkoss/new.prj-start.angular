@@ -28,11 +28,14 @@ export class AuthComponent {
         if (this.isLoginMode) {
             // ...
         } else {
-            this.authService.signup(email, password).subscribe(resData => {
+            this.authService.signup(email, password).subscribe(
+                resData => {
                     console.log(resData);
+                    this.isLoading = false;
                 },
                 error => {
                     console.log(error);
+                    this.isLoading = false;
                 }
             );
         }
