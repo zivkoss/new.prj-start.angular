@@ -10,6 +10,7 @@ interface AuthResponseData {
     refreshToken: string;
     expiresIn: string;
     localId: string;
+    registered?: boolean;
 }
 
 @Injectable({providedIn: 'root'})
@@ -33,6 +34,23 @@ export class AuthService {
                     errorMessage = 'This email exists already';
             }
             return throwError(errorMessage); 
-        }));     
-    }
+        })
+      );
+  }
+  login(email: string, password: string) {
+    this.http.post(
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCd-MHgNg2Zn-CB7HdsRuSbuvCZtZVNNqc',
+        {
+            email: email,
+            password: password,
+            returnSecureToken: true
+        }
+        );
+  }
+
 }
+
+
+
+
+// firebase address link // https://firebase.google.com/docs/reference/rest/auth/#section-sign-in-email-passwrod
