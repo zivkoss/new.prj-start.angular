@@ -37,7 +37,8 @@ login(email: string, password: string) {
             password: password,
             returnSecureToken: true
         }
-    );
+    )
+    .pipe(catchError(this.handleError));
   }
 
   private handleError(errorRes: HttpErrorResponse) {
