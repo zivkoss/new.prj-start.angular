@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 import { NgForm } from "@angular/forms";
+import { Observable } from "rxjs";
+
 import { AuthService } from './auth.service';
 
 @Component({
@@ -24,6 +26,8 @@ export class AuthComponent {
         const email = form.value.email;
         const password = form.value.password;
         // console.log(form.value);
+
+        let authObs: Observable
 
         this.isLoading = true;
         if (this.isLoginMode) {
