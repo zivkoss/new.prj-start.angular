@@ -30,19 +30,9 @@ export class AuthComponent {
 
         this.isLoading = true;
         if (this.isLoginMode) {
-           authObs = this.authService.login(email, password)
-        } else {
-            this.authService.login(email, password).subscribe(
-                resData => {
-                    console.log(resData);
-                    this.isLoading = false;
-                },
-                errorMessage => {
-                    console.log(errorMessage);
-                    this.error = errorMessage;
-                    this.isLoading = false;
-                }
-            );
+           authObs = this.authService.login(email, password);
+        }  else {
+           authObs = this.authService.login(email, password);        
         }  
 
         authObs.subscribe(
