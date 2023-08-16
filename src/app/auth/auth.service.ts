@@ -48,7 +48,7 @@ export class AuthService {
     );
   }
 
-  private handleError(errorRes: HttpErrorResponse)
+  private handleError(errorRes: HttpErrorResponse) {}
 }
 
 
