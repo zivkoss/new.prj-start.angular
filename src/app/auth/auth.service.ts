@@ -24,19 +24,21 @@ export class AuthService {
                 password: password,
                 returnSecureToken: true
             }
-        ).pipe(catchError(errorRes => {
-            let errorMessage = 'An unknown error occurred!';
-            if (!errorRes.error || !errorRes.error.error) {
-                return throwError(errorMessage);
-            }
-            switch (errorRes.error.error.message) {
-                case 'EMAIL_EXISTS':
-                    errorMessage = 'This email exists already';
-            }
-            return throwError(errorMessage); 
-        })
-      );
-  }
+        )
+        .pipe(
+            catchError(errorRes => {
+                let errorMessage = 'An unknown error occurred!';
+                if (!errorRes.error || !errorRes.error.error) {
+                    return throwError(errorMessage);
+                }
+                switch (errorRes.error.error.message) {
+                    case 'EMAIL_EXISTS':
+                        errorMessage = 'This email exists already';
+                }
+                return throwError(errorMessage); 
+            })
+        );
+    }
   login(email: string, password: string) {
     return this.http.post<AuthResponseData>(
         'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCd-MHgNg2Zn-CB7HdsRuSbuvCZtZVNNqc',
