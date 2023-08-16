@@ -39,7 +39,8 @@ export class AuthService {
             })
         );
     }
-  login(email: string, password: string) {
+
+login(email: string, password: string) {
     return this.http.post<AuthResponseData>(
         'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCd-MHgNg2Zn-CB7HdsRuSbuvCZtZVNNqc',
         {
@@ -50,7 +51,17 @@ export class AuthService {
     );
   }
 
-  private handleError(errorRes: HttpErrorResponse) {}
+  private handleError(errorRes: HttpErrorResponse) {
+    let errorMessage = 'An unknown error occurred!';
+                if (!errorRes.error || !errorRes.error.error) {
+                    return throwError(errorMessage);
+                }
+                switch (errorRes.error.error.message) {
+                    case 'EMAIL_EXISTS':
+                        errorMessage = 'This email exists already';
+                }
+                return throwError(errorMessage); 
+  }
 }
 
 
