@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError } from "rxjs/operators";
 import { throwError } from "rxjs";
 
@@ -47,6 +47,8 @@ export class AuthService {
         }
     );
   }
+
+  private handleError(errorRes: HttpErrorResponse)
 }
 
 
