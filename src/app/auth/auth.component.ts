@@ -27,7 +27,7 @@ export class AuthComponent {
         const password = form.value.password;
         // console.log(form.value);
 
-        let authObs: Observable
+        let authObs: Observable<>
 
         this.isLoading = true;
         if (this.isLoginMode) {
