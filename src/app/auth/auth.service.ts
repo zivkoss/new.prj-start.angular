@@ -32,6 +32,7 @@ export class AuthService {
             }
         )
         .pipe(catchError(this.handleError), tap(resData => {
+            const expirationDate = new Date(new Date().getTime());
             const user = new User(resData.email, resData.localId, resData.idToken);
         }));
     }
