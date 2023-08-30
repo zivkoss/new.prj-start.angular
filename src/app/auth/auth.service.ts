@@ -18,9 +18,12 @@ export interface AuthResponseData {
 export class AuthService { 
     user = new Subject<User>();
 
+    
     constructor(private http: HttpClient) {}
+
     signup(email: string, password: string) {
-        return this.http.post<AuthResponseData>(
+        return this.http
+        .post<AuthResponseData>(
             'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCd-MHgNg2Zn-CB7HdsRuSbuvCZtZVNNqc',
             {
                 email: email,
@@ -28,7 +31,9 @@ export class AuthService {
                 returnSecureToken: true
             }
         )
-        .pipe(catchError(this.handleError));
+        .pipe(catchError(this.handleError), tap(resData => {
+            const user = new User(resData.email, resData.localId, resData.idToken);
+        }));
     }
 
 login(email: string, password: string) {
