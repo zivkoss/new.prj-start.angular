@@ -11,4 +11,3 @@ export class User {
     }    
 }
 
-user.token
