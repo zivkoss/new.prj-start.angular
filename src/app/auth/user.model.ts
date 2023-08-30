@@ -7,6 +7,8 @@ export class User {
         ) {}
 
     get token() {
-        
+
     }    
 }
+
+user.token
