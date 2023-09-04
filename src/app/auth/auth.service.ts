@@ -52,7 +52,7 @@ login(email: string, password: string) {
     .pipe(catchError(this.handleError));
   }
 
-  private handleAuthentication(email: string, token: string, expiresIN: number) {
+  private handleAuthentication(email: string, userId: string, token: string, expiresIN: number) {
     const expirationDate = new Date(
         new Date().getTime() + +resData.expiresIn * 1000
     );
@@ -63,7 +63,7 @@ login(email: string, password: string) {
            expirationDate
         );
         this.user.next(user);
-    })
+    }
   }
 
   private handleError(errorRes: HttpErrorResponse) {
