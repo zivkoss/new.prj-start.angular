@@ -57,9 +57,9 @@ login(email: string, password: string) {
         new Date().getTime() + +resData.expiresIn * 1000
     );
     const user = new User(
-           resData.email,
-           resData.localId, 
-           resData.idToken, 
+           email,
+           userId, 
+           token, 
            expirationDate
         );
         this.user.next(user);
