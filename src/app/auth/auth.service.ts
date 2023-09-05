@@ -49,12 +49,14 @@ login(email: string, password: string) {
             returnSecureToken: true
         }
     )
-    .pipe(catchError(this.handleError));
+    .pipe(catchError(this.handleError), tap(resData => {
+        const expirationDate = new Date(new Date().getTime() + +resData.expiresIn * 1000);
+    }));
   }
 
   private handleAuthentication(email: string, userId: string, token: string, expiresIN: number) {
     const expirationDate = new Date(
-        new Date().getTime() + +resData.expiresIn * 1000
+        new Date().getTime() + expiresIn * 1000
     );
     const user = new User(
            email,
@@ -85,7 +87,7 @@ login(email: string, password: string) {
 
                 return throwError(errorMessage); 
   }
-}
+
 
 
 
