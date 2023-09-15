@@ -58,9 +58,9 @@ login(email: string, password: string) {
     );
         const user = new User(
     
-            resData.email,
-            resData.localId,
-            resData.idToken,
+            email,
+            localId,
+            idToken,
             expirationDate
         );
         this.user.next(user);
