@@ -31,15 +31,15 @@ export class AuthService {
                 returnSecureToken: true
             }
         )
-        
+
         .pipe(
           catchError(this.handleError),
           tap(resData => {
-                const expirationDate = new Date(new Date().getTime() + +resData.expiresIn * 1000);
+                const expirationDate = new Date(new Date().getTime() + +resData.expiresIn * 1000
+                );
                 const user = new User(resData.email, resData.localId, resData.idToken);
             }));
           
-        );
     }
 
 login(email: string, password: string) {
