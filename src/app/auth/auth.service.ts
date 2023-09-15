@@ -34,15 +34,7 @@ export class AuthService {
         .pipe(
           catchError(this.handleError),
           tap(resData => {
-                const expirationDate = new Date(new Date().getTime() + +resData.expiresIn * 1000
-                );
-                const user = new User(
-                    resData.email,
-                    resData.localId,
-                    resData.idToken,
-                    expirationDate
-                );
-                this.user.next(user);
+               
             })
         );
     }
@@ -61,18 +53,16 @@ login(email: string, password: string) {
   }
   
   private handleAuthentication(email: string, token: string, expiresIn: number) {}
-
-  private handleAuthentication(email: string, userId: string, token: string, expiresIN: number) {
-    const expirationDate = new Date(
-        new Date().getTime() + expiresIn * 1000
-    );
-    const user = new User(
-           email,
-           userId, 
-           token, 
-           expirationDate
-        );
-        this.user.next(user);
+  const expirationDate = new Date(new Date().getTime() + +resData.expiresIn * 1000
+  );
+  const user = new User(
+      resData.email,
+      resData.localId,
+      resData.idToken,
+      expirationDate
+  );
+  this.user.next(user);
+  
     }
   }
 
