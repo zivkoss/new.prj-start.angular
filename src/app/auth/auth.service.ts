@@ -43,7 +43,8 @@ export class AuthService {
                     resData.idToken,
                     expirationDate
                     );
-            }));
+            })
+        );
           
     }
 
