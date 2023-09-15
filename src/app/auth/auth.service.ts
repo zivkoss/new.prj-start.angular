@@ -40,7 +40,9 @@ export class AuthService {
                 const user = new User(
                     resData.email,
                     resData.localId,
-                    resData.idToken);
+                    resData.idToken,
+                    expirationDate
+                    );
             }));
           
     }
