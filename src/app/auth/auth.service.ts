@@ -53,21 +53,21 @@ login(email: string, password: string) {
   }
   
   private handleAuthentication(email: string, token: string, expiresIn: number) {}
-  const expirationDate = new Date(new Date().getTime() + +resData.expiresIn * 1000
-  );
-  const user = new User(
-      resData.email,
-      resData.localId,
-      resData.idToken,
-      expirationDate
-  );
-  this.user.next(user);
-  
-    }
-  }
+    const expirationDate = new Date(
+        new Date().getTime() + +resData.expiresIn * 1000
+    );
+        const user = new User(
+    
+            resData.email,
+            resData.localId,
+            resData.idToken,
+            expirationDate
+        );
+        this.user.next(user);
+    }   
 
-  private handleError(errorRes: HttpErrorResponse) {
-    let errorMessage = 'An unknown error occurred!';
+    private handleError(errorRes: HttpErrorResponse) {
+        let errorMessage = 'An unknown error occurred!';
                 if (!errorRes.error || !errorRes.error.error) {
                     return throwError(errorMessage);
                 }
