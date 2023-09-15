@@ -42,7 +42,7 @@ export class AuthService {
                     resData.localId,
                     resData.idToken,
                     expirationDate
-                    );
+                );
             })
         );
     }
