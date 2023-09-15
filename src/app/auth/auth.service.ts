@@ -59,6 +59,8 @@ login(email: string, password: string) {
     )
     .pipe(catchError(this.handleError));
   }
+  
+  private handleAuthentication
 
   private handleAuthentication(email: string, userId: string, token: string, expiresIN: number) {
     const expirationDate = new Date(
