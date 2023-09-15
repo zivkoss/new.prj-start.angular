@@ -57,7 +57,7 @@ login(email: string, password: string) {
             returnSecureToken: true
         }
     )
-   
+    .pipe(catchError(this.handleError));
   }
 
   private handleAuthentication(email: string, userId: string, token: string, expiresIN: number) {
