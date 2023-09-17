@@ -67,6 +67,7 @@ export class AuthService {
             idToken,
             expirationDate
         );
+
         this.user.next(user);
     }   
 
