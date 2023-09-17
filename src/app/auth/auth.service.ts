@@ -34,12 +34,15 @@ export class AuthService {
         .pipe(
           catchError(this.handleError),
           tap(resData => {
-                this.handleAuthentication(
+                const expirationDate = new Date(
+                    new Date().getTime() + +resData.expiresIn * 1000
+                );
                     resData.email, 
                     resData.localId,
                     resData.idToken, 
-                    +resData.expiresIn
+                    expirationDate
                 );
+                this.user.next(user);
             })
         );
     }
