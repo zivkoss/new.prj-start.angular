@@ -107,7 +107,7 @@ export class AuthService {
 
 
 
-function handleAuthentication(email: any, string: any, token: any, string1: any, expiresIn: any, number: any) {
-    throw new Error("Function not implemented.");
-}
+// function handleAuthentication(email: any, string: any, token: any, string1: any, expiresIn: any, number: any) {
+//     throw new Error("Function not implemented.");
+// }
 // firebase address link // https://firebase.google.com/docs/reference/rest/auth/#section-sign-in-email-passwrod
