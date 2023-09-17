@@ -63,7 +63,7 @@ export class AuthService {
   
   private handleAuthentication(email: string, token: string, expiresIn: number) {
     const expirationDate = new Date(
-        new Date().getTime() + +resData.expiresIn * 1000
+        new Date().getTime() + expiresIn * 1000
     );
         const user = new User(
             email,
@@ -71,7 +71,6 @@ export class AuthService {
             idToken,
             expirationDate
         );
-
         this.user.next(user);
     }   
 
