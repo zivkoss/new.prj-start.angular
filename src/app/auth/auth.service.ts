@@ -60,6 +60,7 @@ export class AuthService {
     .pipe(catchError(this.handleError));
   }
   
+  
   private handleAuthentication(email: string, token: string, expiresIn: number) {}
     const expirationDate = new Date(
         new Date().getTime() + +resData.expiresIn * 1000
