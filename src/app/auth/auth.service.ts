@@ -66,7 +66,6 @@ export class AuthService {
     );
   }
 
-  
   private handleAuthentication(
     email: string, 
     userId: string,
