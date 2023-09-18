@@ -13,6 +13,10 @@ export class HeaderComponent implements OnInit {
     private authService: AuthService
   ) {}
 
+  ngOnInit() {
+    this.authService.user.subscribe()    
+  }
+
   onSaveData() {
     this.dataStorageService.storeRecipes();
   }
