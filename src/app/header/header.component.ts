@@ -9,6 +9,7 @@ import { AuthService } from '../auth/auth.service';
   templateUrl: './header.component.html'
 })
 export class HeaderComponent implements OnInit, OnDestroy {
+  isAuthenticated = false;
   private userSub: Subscription;
 
   constructor(
@@ -18,7 +19,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.authService.user.subscribe(user => {
-      
+
     })    
   }
 
