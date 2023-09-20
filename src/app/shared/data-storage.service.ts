@@ -27,7 +27,7 @@ export class DataStorageService {
     }
 
     fetchRecipes() {
-      this.authService.user.pipe(take).subscribe()
+      this.authService.user.pipe(take(1)).subscribe()
        return this.http
         .get<Recipe[]>(
             'https://ng-course-recipe-book-83125-default-rtdb.firebaseio.com/recipes.json'
