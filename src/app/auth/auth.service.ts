@@ -39,7 +39,7 @@ export class AuthService {
                     resData.idToken,
                     +resData.expiresIn
                 );
-          })
+            })
         );
     }
 
