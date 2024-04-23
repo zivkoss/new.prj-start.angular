@@ -7,10 +7,6 @@ export class Ingredient {
 
 
 
-
-
-
-
 // export class Ingredient {
 //   public name: string;
 //   public amount: number;
@@ -19,4 +15,4 @@ export class Ingredient {
 //     this.name = name;
 //     this.amount = amount;
 //   }
-// }
+// } 
