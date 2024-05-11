@@ -5,7 +5,9 @@ import { Component } from '@angular/core';
   templateUrl: './header.component.html'
 })
 export class HeaderComponent {
+  onSelect(feature: string) {
 
+  }
 }
 
 // new update versions 
