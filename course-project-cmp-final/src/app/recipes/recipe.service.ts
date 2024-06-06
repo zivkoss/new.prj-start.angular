@@ -33,10 +33,8 @@ constructor(private slService: ShoppingListService) {}
       }
       
       addIngredientsToShoppingList(ingredients: Ingredient[]) {
-        this.slService.addIngredients(ingredients);
-
+        this.slService.addIngredients(ingredients); 
       }
-
     } 
     
     
